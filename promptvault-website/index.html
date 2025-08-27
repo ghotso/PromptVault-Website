@@ -105,23 +105,32 @@ services:
   <section id="screens" class="border-t border-white/10">
     <div class="mx-auto max-w-6xl px-4 py-20 text-center">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Interface Preview</h2>
-      <p class="mt-3 text-slate-300">A look into PromptVault’s clean and modern interface.</p>
+      <p class="mt-3 text-slate-300">Click any screenshot to view it larger.</p>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
-        <div class="rounded-2xl border border-white/10 overflow-hidden">
-          <img src="./images/Admin-Page.png" alt="Admin Page" class="w-full h-auto" />
-        </div>
-        <div class="rounded-2xl border border-white/10 overflow-hidden">
-          <img src="./images/Prompt-Details.png" alt="Prompt Details" class="w-full h-auto" />
-        </div>
-        <div class="rounded-2xl border border-white/10 overflow-hidden">
-          <img src="./images/Prompts-Page.png" alt="Prompts Page" class="w-full h-auto" />
-        </div>
-        <div class="rounded-2xl border border-white/10 overflow-hidden">
-          <img src="./images/Team-Feed.png" alt="Team Feed" class="w-full h-auto" />
-        </div>
+        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Admin-Page.png" aria-label="Open Admin Page screenshot">
+          <img src="./images/Admin-Page.png" alt="Admin Page" class="w-full h-auto group-hover:scale-[1.02] transition" />
+        </button>
+        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Prompt-Details.png" aria-label="Open Prompt Details screenshot">
+          <img src="./images/Prompt-Details.png" alt="Prompt Details" class="w-full h-auto group-hover:scale-[1.02] transition" />
+        </button>
+        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Prompts-Page.png" aria-label="Open Prompts Page screenshot">
+          <img src="./images/Prompts-Page.png" alt="Prompts Page" class="w-full h-auto group-hover:scale-[1.02] transition" />
+        </button>
+        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Team-Feed.png" aria-label="Open Team Feed screenshot">
+          <img src="./images/Team-Feed.png" alt="Team Feed" class="w-full h-auto group-hover:scale-[1.02] transition" />
+        </button>
       </div>
     </div>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/80" aria-hidden="true"></div>
+    <div class="relative z-10 h-full w-full flex items-center justify-center p-4">
+      <button id="lb-close" class="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white text-slate-900 font-bold" aria-label="Close">✕</button>
+      <img id="lb-image" src="" alt="Screenshot" class="max-h-[90vh] max-w-[95vw] object-contain shadow-2xl rounded-xl" />
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="border-t border-white/10">
