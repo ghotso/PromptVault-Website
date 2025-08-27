@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PromptVault — Secure, Self‑hosted Prompt Management</title>
-  <meta name="description" content="PromptVault is a self‑hosted, privacy‑friendly vault for AI prompts with tagging, versioning, team sharing, and full‑text search." />
-  <link rel="icon" href="frontend/public/PromptVault_Icon_No_BG.svg" />
+  <title>PromptVault — Secure, Self-hosted Prompt Management</title>
+  <meta name="description" content="PromptVault is a self-hosted, privacy-friendly vault for AI prompts with tagging, versioning, team sharing, and full-text search." />
+  <link rel="icon" href="./images/PromptVault_Icon_No_BG.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -33,9 +33,9 @@
   <section class="relative overflow-hidden">
     <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_80%_at_50%_0%,rgba(198,247,40,.25),transparent_70%)]"></div>
     <div class="mx-auto max-w-5xl px-4 py-24 text-center">
-      <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500 text-white font-bold text-xl shadow-glow">PV</span>
+      <img src="./images/PromptVault_Icon_No_BG.svg" alt="PromptVault Logo" class="mx-auto h-20 w-20" />
       <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">PromptVault<br><span class="text-brand-400">Your secure vault for AI prompts</span></h1>
-      <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">Self‑hosted, privacy‑friendly, and feature‑rich. Organize, version, and share prompts with advanced search, team support, and a modern UI.</p>
+      <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">Self-hosted, privacy-friendly, and feature-rich. Organize, version, and share prompts with advanced search, team support, and a modern UI.</p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a href="#features" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-medium shadow-glow">Explore Features</a>
         <a href="#install" class="px-6 py-3 rounded-xl border border-white/20 text-white/90 hover:bg-white/5">Install Now</a>
@@ -48,13 +48,13 @@
   <section id="features" class="border-t border-white/10">
     <div class="mx-auto max-w-6xl px-4 py-20 text-center">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Why PromptVault?</h2>
-      <p class="mt-4 text-slate-300 max-w-3xl mx-auto">All‑in‑one prompt management built for individuals and teams. Secure authentication, advanced tagging, auto‑versioning, and team collaboration included out of the box.</p>
+      <p class="mt-4 text-slate-300 max-w-3xl mx-auto">All-in-one prompt management built for individuals and teams. Secure authentication, advanced tagging, auto-versioning, and team collaboration included out of the box.</p>
       <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-left">
         <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🔐 Authentication & Teams</h3><p class="mt-2 text-slate-300">JWT auth, user roles, registration control, and full team management.</p></article>
-        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">📝 Prompt Management</h3><p class="mt-2 text-slate-300">Rich prompt creation, notes, model hints, auto‑versioning, and history rollback.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">📝 Prompt Management</h3><p class="mt-2 text-slate-300">Rich prompt creation, notes, model hints, auto-versioning, and history rollback.</p></article>
         <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🏷️ Advanced Tagging</h3><p class="mt-2 text-slate-300">Smart tags with autocomplete, usage tracking, and safe deletion.</p></article>
-        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">👥 Team Collaboration</h3><p class="mt-2 text-slate-300">Team feeds, cross‑team sharing, and role‑based access control.</p></article>
-        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🔎 Full‑text Search</h3><p class="mt-2 text-slate-300">Find prompts across titles, content, and tags with instant search.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">👥 Team Collaboration</h3><p class="mt-2 text-slate-300">Team feeds, cross-team sharing, and role-based access control.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🔎 Full-text Search</h3><p class="mt-2 text-slate-300">Find prompts across titles, content, and tags with instant search.</p></article>
         <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🎨 Modern UI</h3><p class="mt-2 text-slate-300">Responsive, dark/light themes, smooth animations, and custom branding.</p></article>
       </div>
     </div>
@@ -64,7 +64,7 @@
   <section id="install" class="border-t border-white/10">
     <div class="mx-auto max-w-6xl px-4 py-20 text-center">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Install with Docker</h2>
-      <p class="mt-3 text-slate-300 max-w-2xl mx-auto">PromptVault ships as a ready‑to‑use Docker image. Perfect for Unraid, Portainer, or any Linux server.</p>
+      <p class="mt-3 text-slate-300 max-w-2xl mx-auto">PromptVault ships as a ready-to-use Docker image. Perfect for Unraid, Portainer, or any Linux server.</p>
       <div class="mt-8 grid md:grid-cols-2 gap-6 text-left">
         <div class="rounded-xl border border-white/10 bg-slate-900/70 p-6">
           <h3 class="font-semibold">Docker Run</h3>
@@ -101,16 +101,24 @@ services:
     </div>
   </section>
 
-  <!-- Screenshots Placeholder -->
+  <!-- Screenshots -->
   <section id="screens" class="border-t border-white/10">
     <div class="mx-auto max-w-6xl px-4 py-20 text-center">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Interface Preview</h2>
-      <p class="mt-3 text-slate-300">Real screenshots coming soon. A sleek UI with dashboard, collections, editor, and history views.</p>
+      <p class="mt-3 text-slate-300">A look into PromptVault’s clean and modern interface.</p>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
-        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Dashboard</div>
-        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Collections</div>
-        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Editor</div>
-        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Version History</div>
+        <div class="rounded-2xl border border-white/10 overflow-hidden">
+          <img src="./images/Admin-Page.png" alt="Admin Page" class="w-full h-auto" />
+        </div>
+        <div class="rounded-2xl border border-white/10 overflow-hidden">
+          <img src="./images/Prompt-Details.png" alt="Prompt Details" class="w-full h-auto" />
+        </div>
+        <div class="rounded-2xl border border-white/10 overflow-hidden">
+          <img src="./images/Prompts-Page.png" alt="Prompts Page" class="w-full h-auto" />
+        </div>
+        <div class="rounded-2xl border border-white/10 overflow-hidden">
+          <img src="./images/Team-Feed.png" alt="Team Feed" class="w-full h-auto" />
+        </div>
       </div>
     </div>
   </section>
