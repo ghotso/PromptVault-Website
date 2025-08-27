@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PromptVault — Secure, Self‑hosted Prompt Management</title>
+  <meta name="description" content="PromptVault is a self‑hosted, privacy‑friendly vault for AI prompts with tagging, versioning, team sharing, and full‑text search." />
+  <link rel="icon" href="frontend/public/PromptVault_Icon_No_BG.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f8fceb', 100: '#edfbc7', 200: '#dbf793', 300: '#c6f728', 400: '#a9d81f',
+              500: '#8bb317', 600: '#6e8d12', 700: '#55690d', 800: '#3b4609', 900: '#232805', 950:'#121402'
+            }
+          },
+          boxShadow: { glow: '0 10px 30px -10px rgba(198,247,40,.5)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); backdrop-filter: blur(10px); }
+    html { scroll-behavior: smooth; }
+    .code { font-family: "JetBrains Mono", monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-brand-400/30">
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_80%_at_50%_0%,rgba(198,247,40,.25),transparent_70%)]"></div>
+    <div class="mx-auto max-w-5xl px-4 py-24 text-center">
+      <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500 text-white font-bold text-xl shadow-glow">PV</span>
+      <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">PromptVault<br><span class="text-brand-400">Your secure vault for AI prompts</span></h1>
+      <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">Self‑hosted, privacy‑friendly, and feature‑rich. Organize, version, and share prompts with advanced search, team support, and a modern UI.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#features" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-medium shadow-glow">Explore Features</a>
+        <a href="#install" class="px-6 py-3 rounded-xl border border-white/20 text-white/90 hover:bg-white/5">Install Now</a>
+        <a href="https://github.com/ghotso/PromptVault" target="_blank" rel="noreferrer" class="px-6 py-3 rounded-xl border border-white/20 text-white/90 hover:bg-white/5">GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Why PromptVault?</h2>
+      <p class="mt-4 text-slate-300 max-w-3xl mx-auto">All‑in‑one prompt management built for individuals and teams. Secure authentication, advanced tagging, auto‑versioning, and team collaboration included out of the box.</p>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-left">
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🔐 Authentication & Teams</h3><p class="mt-2 text-slate-300">JWT auth, user roles, registration control, and full team management.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">📝 Prompt Management</h3><p class="mt-2 text-slate-300">Rich prompt creation, notes, model hints, auto‑versioning, and history rollback.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🏷️ Advanced Tagging</h3><p class="mt-2 text-slate-300">Smart tags with autocomplete, usage tracking, and safe deletion.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">👥 Team Collaboration</h3><p class="mt-2 text-slate-300">Team feeds, cross‑team sharing, and role‑based access control.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🔎 Full‑text Search</h3><p class="mt-2 text-slate-300">Find prompts across titles, content, and tags with instant search.</p></article>
+        <article class="rounded-2xl border border-white/10 bg-slate-900/60 p-6"><h3 class="text-xl font-semibold">🎨 Modern UI</h3><p class="mt-2 text-slate-300">Responsive, dark/light themes, smooth animations, and custom branding.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Install -->
+  <section id="install" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Install with Docker</h2>
+      <p class="mt-3 text-slate-300 max-w-2xl mx-auto">PromptVault ships as a ready‑to‑use Docker image. Perfect for Unraid, Portainer, or any Linux server.</p>
+      <div class="mt-8 grid md:grid-cols-2 gap-6 text-left">
+        <div class="rounded-xl border border-white/10 bg-slate-900/70 p-6">
+          <h3 class="font-semibold">Docker Run</h3>
+<pre class="mt-3 overflow-x-auto rounded-lg bg-slate-950 p-4 text-sm code"><code>docker run -d \
+  --name promptvault \
+  --restart unless-stopped \
+  -p 3000:3000 \
+  -v ~/promptvault/data:/app/backend/data \
+  -v ~/promptvault/logs:/app/backend/logs \
+  -e NODE_ENV=production \
+  -e JWT_SECRET=your-secret \
+  -e DATABASE_URL=file:./data/promptvault.db \
+  ghcr.io/ghotso/promptvault:latest</code></pre>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-slate-900/70 p-6">
+          <h3 class="font-semibold">Docker Compose</h3>
+<pre class="mt-3 overflow-x-auto rounded-lg bg-slate-950 p-4 text-sm code"><code>version: '3.8'
+services:
+  promptvault:
+    image: ghcr.io/ghotso/promptvault:latest
+    container_name: promptvault
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/backend/data
+      - ./logs:/app/backend/logs
+    environment:
+      - NODE_ENV=production
+      - JWT_SECRET=your-secret
+      - DATABASE_URL=file:./data/promptvault.db</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Placeholder -->
+  <section id="screens" class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Interface Preview</h2>
+      <p class="mt-3 text-slate-300">Real screenshots coming soon. A sleek UI with dashboard, collections, editor, and history views.</p>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Dashboard</div>
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Collections</div>
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Editor</div>
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 aspect-[16/10] grid place-items-center text-slate-300">Version History</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+      <p>© <span id="year"></span> PromptVault. MIT Licensed.</p>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-white" href="https://github.com/ghotso/PromptVault" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="hover:text-white" href="https://ghcr.io/ghotso/promptvault" target="_blank" rel="noreferrer">Docker</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
