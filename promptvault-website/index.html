@@ -107,18 +107,18 @@ services:
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Interface Preview</h2>
       <p class="mt-3 text-slate-300">Click any screenshot to view it larger.</p>
       <div class="mt-10 grid gap-6 md:grid-cols-2">
-        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Admin-Page.png" aria-label="Open Admin Page screenshot">
+        <a href="./images/Admin-Page.png" data-lightbox class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" aria-label="Open Admin Page screenshot">
           <img src="./images/Admin-Page.png" alt="Admin Page" class="w-full h-auto group-hover:scale-[1.02] transition" />
-        </button>
-        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Prompt-Details.png" aria-label="Open Prompt Details screenshot">
+        </a>
+        <a href="./images/Prompt-Details.png" data-lightbox class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" aria-label="Open Prompt Details screenshot">
           <img src="./images/Prompt-Details.png" alt="Prompt Details" class="w-full h-auto group-hover:scale-[1.02] transition" />
-        </button>
-        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Prompts-Page.png" aria-label="Open Prompts Page screenshot">
+        </a>
+        <a href="./images/Prompts-Page.png" data-lightbox class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" aria-label="Open Prompts Page screenshot">
           <img src="./images/Prompts-Page.png" alt="Prompts Page" class="w-full h-auto group-hover:scale-[1.02] transition" />
-        </button>
-        <button class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" data-lightbox="./images/Team-Feed.png" aria-label="Open Team Feed screenshot">
+        </a>
+        <a href="./images/Team-Feed.png" data-lightbox class="group rounded-2xl border border-white/10 overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-400" aria-label="Open Team Feed screenshot">
           <img src="./images/Team-Feed.png" alt="Team Feed" class="w-full h-auto group-hover:scale-[1.02] transition" />
-        </button>
+        </a>
       </div>
     </div>
   </section>
@@ -145,6 +145,30 @@ services:
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-image');
+    const lbClose = document.getElementById('lb-close');
+    const openLb = (src) => {
+      lbImg.src = src;
+      lb.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeLb = () => {
+      lb.classList.add('hidden');
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    };
+    document.querySelectorAll('[data-lightbox]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLb(link.getAttribute('href'));
+      });
+    });
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); }); });
   </script>
 </body>
 </html>
