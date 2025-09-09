@@ -143,6 +143,7 @@ services:
     </div>
   </footer>
 
+  <!-- Page Scripts -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -150,6 +151,7 @@ services:
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-image');
     const lbClose = document.getElementById('lb-close');
+
     const openLb = (src) => {
       lbImg.src = src;
       lb.classList.remove('hidden');
@@ -160,6 +162,7 @@ services:
       lbImg.src = '';
       document.body.style.overflow = '';
     };
+
     document.querySelectorAll('[data-lightbox]').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -168,7 +171,35 @@ services:
     });
     lbClose.addEventListener('click', closeLb);
     lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); }); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+  </script>
+
+  <!-- Featurebase Messenger -->
+  <script>
+    !(function(w,d){
+      var id="featurebase-sdk";
+      function load(){
+        if(!d.getElementById(id)){
+          var s=d.createElement("script");
+          s.id=id; s.src="https://do.featurebase.app/js/sdk.js";
+          d.getElementsByTagName("script")[0].parentNode.insertBefore(s, d.getElementsByTagName("script")[0]);
+        }
+      }
+      if(typeof w.Featurebase!=="function"){
+        w.Featurebase=function(){(w.Featurebase.q=w.Featurebase.q||[]).push(arguments)};
+      }
+      if(d.readyState==="complete"||d.readyState==="interactive") load();
+      else d.addEventListener("DOMContentLoaded", load);
+    })(window,document);
+  </script>
+  <script>
+    // Minimal boot (no user data)
+    Featurebase("boot", {
+      appId: "68bf1c72d85fefb2528cc23e",
+      theme: "dark",
+      language: "en"
+      // hideDefaultLauncher: true // uncomment if you want to use your own launcher
+    });
   </script>
 </body>
 </html>
